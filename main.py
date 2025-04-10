@@ -19,7 +19,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(
     token=BOT_TOKEN,
-    default=DefaultBotSettings(parse_mode=ParseMode.HTML)
+    bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
 )
 import asyncio
 from dotenv import load_dotenv
