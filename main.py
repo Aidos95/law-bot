@@ -14,7 +14,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, WebAppInfo, FSInputFile
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.client.default import DefaultBotProperties
+from aiogram import DefaultBotProperties
 import asyncio
 from dotenv import load_dotenv
 
