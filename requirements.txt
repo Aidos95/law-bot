@@ -11,3 +11,4 @@ docx2pdf
 XlsxWriter
 aiohttp==3.9.3
 pydantic==2.5.3
+PyDrive
