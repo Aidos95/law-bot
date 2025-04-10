@@ -15,7 +15,6 @@ from pydrive.drive import GoogleDrive
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, WebAppInfo, FSInputFile
 from aiogram.enums import ParseMode
-from aiogram.client.default import DefaultBotSettings
 from aiogram.fsm.storage.memory import MemoryStorage
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(
