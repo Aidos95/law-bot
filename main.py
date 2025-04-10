@@ -2,7 +2,8 @@
 import logging
 import os
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv()  # Загружаем переменные из .env
+
 import smtplib
 import sqlite3
 import requests
@@ -12,18 +13,22 @@ from docx2pdf import convert
 import xlsxwriter
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
+
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, WebAppInfo, FSInputFile
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.default import DefaultBotProperties
 
+# Инициализация бота после загрузки .env
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 bot = Bot(
     token=BOT_TOKEN,
     default=DefaultBotProperties(parse_mode=ParseMode.HTML)
 )
+
 import asyncio
-from dotenv import load_dotenv
 
 # ===== Логирование =====
 logging.basicConfig(
