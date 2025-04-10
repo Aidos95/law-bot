@@ -14,7 +14,11 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, WebAppInfo, FSInputFile
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.client.default=DefaultBotSettings(parse_mode=ParseMode.HTML)
+from aiogram.client.default import DefaultBotSettings
+bot = Bot(
+    token="7947746152:AAGtLCKdA9FjXTio6d6in2Q2YDkcwt2Px5E",
+    default=DefaultBotSettings(parse_mode=ParseMode.HTML)
+)
 import asyncio
 from dotenv import load_dotenv
 
