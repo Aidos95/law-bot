@@ -13,3 +13,4 @@ requests
 fastapi
 uvicorn
 jinja2
+docx2pdf
