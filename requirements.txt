@@ -7,7 +7,6 @@ python-docx
 pandas
 openpyxl
 fpdf
-smtplib
 email-validator
 python-multipart
 requests
