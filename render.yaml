@@ -2,8 +2,8 @@ services:
   - type: web
     name: law-bot
     env: python
-    buildCommand: pip install -r main/requirements.txt
-    startCommand: python main/main.py
+buildCommand: pip install -r main/requirements.txt
+startCommand: python main/main.py
     envVars:
       - key: BOT_TOKEN
         value: "..."
