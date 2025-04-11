@@ -2,16 +2,16 @@ services:
   - type: web
     name: law-bot
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
+    buildCommand: pip install -r main/requirements.txt
+    startCommand: python main/main.py
     envVars:
       - key: BOT_TOKEN
-        value: "7947746152:AAGtLCKdA9FjXTio6d6in2Q2YDkcwt2Px5E"
+        value: "..."
       - key: GIGACHAT_TOKEN
-        value: "YWZhZTZlYWUtZjQ2NC00OWYzLTg2N2QtZGQ5ODYyYjM4NGVlOmJlM2FkNzFkLWY1ZDEtNDlkZS1hNmU0LTQ3NTBlOWJiMzRiNg=="
+        value: "..."
       - key: EMAIL_LOGIN
-        value: "kuralbaev777@mail.ru"
+        value: "..."
       - key: EMAIL_PASSWORD
-        value: "@&$os125"
+        value: "..."
       - key: ADMIN_IDS
-        value: "123456789"
+        value: "..."
