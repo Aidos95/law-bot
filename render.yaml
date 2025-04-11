@@ -1,17 +1,20 @@
 services:
   - type: web
-    name: law-bot
+    name: lawyer-bot
     env: python
-buildCommand: pip install -r main/requirements.txt
-startCommand: python main/main.py
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    autoDeploy: true
     envVars:
       - key: BOT_TOKEN
-        value: "..."
+        fromDotEnv: true
       - key: GIGACHAT_TOKEN
-        value: "..."
+        fromDotEnv: true
       - key: EMAIL_LOGIN
-        value: "..."
+        fromDotEnv: true
       - key: EMAIL_PASSWORD
-        value: "..."
+        fromDotEnv: true
       - key: ADMIN_IDS
-        value: "..."
+        fromDotEnv: true
+      - key: OPENAI_API_KEY
+        fromDotEnv: true
