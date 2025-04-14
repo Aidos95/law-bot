@@ -16,7 +16,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, FSInputFile, WebAppInfo
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.client.default import DefaultBotProperties
+from aiogram.client.bot import DefaultBotProperties
 
 # ===== Загрузка переменных окружения =====
 load_dotenv()
@@ -75,14 +75,32 @@ async def cmd_pay(message: Message):
 # ===== GigaChat API =====
 def ask_gigachat(prompt):
     url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {GIGACHAT_TOKEN}", "Content-Type": "application/json"}
-    payload = {"model": "GigaChat:latest", "messages": [{"role": "user", "content": prompt}]}
+    headers = {
+        "Authorization": f"Bearer {GIGACHAT_TOKEN}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "model": "GigaChat:latest",
+        "messages": [
+            {
+                "role": "system",
+                "content": "Ты опытный юрист. Отвечай строго по делу, без воды, без рекламы, без общих фраз. Не пиши, что ты ИИ. Просто юридический ответ."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        "temperature": 0.2,
+        "max_tokens": 1000
+    }
+
     response = requests.post(url, headers=headers, json=payload, verify=False)
     try:
         result = response.json()
-        return result.get("choices", [{}])[0].get("message", {}).get("content", "\u2757\ufe0f \u041e\u0442\u0432\u0435\u0442 \u043d\u0435 \u043f\u043e\u043b\u0443\u0447\u0435\u043d")
+        return result["choices"][0]["message"]["content"]
     except Exception as e:
-        return f"\u274c \u041e\u0448\u0438\u0431\u043a\u0430 GigaChat: {str(e)}"
+        return f"❌ Ошибка GigaChat: {str(e)}"
 
 # ===== Модерация =====
 def check_moderation(text):
@@ -158,7 +176,4 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
-    try:
-        asyncio.run(main())
-    except (KeyboardInterrupt, SystemExit):
-        print("⛔️ Бот остановлен")
+    asyncio.run(main())
