@@ -1,11 +1,29 @@
-app = "law-bot"
+# fly.toml app configuration file generated for a-law-bot on 2025-04-14T11:59:04+05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[build]
-dockerfile = "Dockerfile"
-
-[env]
-PORT = "8080"
+app = 'a-law-bot'
+primary_region = 'ams'
 
 [experimental]
-auto_rollback = true
+  auto_rollback = true
 
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  PYTHONUNBUFFERED = 'TRUE'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

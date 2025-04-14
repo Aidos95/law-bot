@@ -1,4 +1,5 @@
-aiogram==3.3.0
+aiogram==3.4.1
+openai
 aiohttp
 python-dotenv
 gspread

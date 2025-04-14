@@ -1,0 +1,103 @@
+# flyctl launch added from .gitignore
+# Byte-compiled / optimized / DLL files
+**\__pycache__
+**\*.py[cod]
+**\*$py.class
+
+# C extensions
+**\*.so
+
+# Virtual environment
+**\venv
+**\.venv
+**\env
+**\ENV
+**\*.env
+
+# Distribution / packaging
+**\.Python
+**\build
+**\develop-eggs
+**\dist
+**\downloads
+**\eggs
+**\.eggs
+**\lib
+**\lib64
+**\parts
+**\sdist
+**\var
+**\*.egg-info
+**\.installed.cfg
+**\*.egg
+
+# PyInstaller
+# Usually contains the executable and build files
+**\*.spec
+
+# Unit test / coverage reports
+**\htmlcov
+**\.tox
+**\.nox
+**\.coverage
+**\.coverage.*
+**\.cache
+**\nosetests.xml
+**\coverage.xml
+**\*.cover
+**\*.py,cover
+**\.hypothesis
+**\.pytest_cache
+
+# mypy
+**\.mypy_cache
+**\.dmypy.json
+**\dmypy.json
+
+# Pyre
+**\.pyre
+
+# Jupyter Notebook
+**\.ipynb_checkpoints
+
+# VS Code
+**\.vscode
+
+# Windows
+**\Thumbs.db
+**\ehthumbs.db
+**\Desktop.ini
+**\$RECYCLE.BIN
+
+# Logs
+**\*.log
+
+# SQLite DB (если используется)
+**\*.sqlite3
+**\*.db
+
+# dotenv
+**\.env
+**\.env.*
+
+# Local config
+**\config.py
+
+# Google API credentials (если не в .env)
+**\token.json
+**\credentials.json
+
+# Excel выгрузки, отчёты, временные файлы
+**\*.xlsx
+**\*.xls
+**\*.pdf
+**\*.docx
+**\*.tmp
+**\~$*.docx
+
+# GitHub
+**\.git
+
+# System folders
+**\AppData
+fly.toml
